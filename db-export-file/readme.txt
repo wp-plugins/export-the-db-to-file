@@ -9,8 +9,7 @@ License: GPLv2 or later
 
 
 == Description ==
-
-Plug-in to export the DB tables in WordPress Admin screen as csv file or tsv file
+Plug-in to export the DB tables in WordPress Admin screen as csv file or tsv file.
 WordPress管理画面でDBのテーブルをcsvファイルもしくはtsvファイルとしてエクスポートするプラグイン
 
 == Installation ==
