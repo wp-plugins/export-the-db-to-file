@@ -6,7 +6,8 @@
 /*
  * Plugin Name: Export the DB to file
  * Plugin URI: https://wordpress.org/plugins/
- * Description: Plug-in to export the DB tables in WordPress Admin screen as csv file or tsv file (WordPress管理画面でDBのテーブルをcsvファイルもしくはtsvファイルとしてエクスポートするプラグイン)
+ * Description: Plug-in to export the DB tables in WordPress Admin screen as csv file or tsv file
+ * WordPress管理画面でDBのテーブルをcsvファイルもしくはtsvファイルとしてエクスポートするプラグイン
  * Author: Harigae
  * Version: 1.0
  * Author URI:

@@ -7,9 +7,14 @@ Tested up to: 1.0
 Stable tag: 1.0
 License: GPLv2 or later
 
-
 == Description ==
+
+Plug -in only to change the radio button a category from the check box in the WordPress Admin screen
+
+WordPress管理画面においてカテゴリーをチェックボックスからラジオボタンに変更させるだけのプラグイン
+
 Plug-in to export the DB tables in WordPress Admin screen as csv file or tsv file.
+
 WordPress管理画面でDBのテーブルをcsvファイルもしくはtsvファイルとしてエクスポートするプラグイン
 
 == Installation ==
