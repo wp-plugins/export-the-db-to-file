@@ -152,7 +152,7 @@ function db_search() {
 			$i = 0;
 			$column_check = array ();
 			echo '<h4>'.$table_selected.' : ' . $_POST ["example"] . '</h4>';
-			echo '<h4>Column select</h4>';
+			echo '<h4>'.$column_select.'</h4>';
 			echo '<form method = "POST" action = "">';
 			echo '<div>';
 			foreach ( $table_col as $col ) {
@@ -160,7 +160,7 @@ function db_search() {
 				$i ++;
 			}
 			echo '</div>';
-			echo '<h4>Select File type</h4>';
+			echo '<h4>'.$type_select.'</h4>';
 			echo '<input type = "radio" name = "separate" value="csv" checked >'.$csv_radio;
 			echo '<input type = "radio" name = "separate" value="tsv" >'.$tsv_radio;
 			echo '<input type="hidden" name = "count" value=' . $i . '>';
@@ -288,7 +288,8 @@ function db_search() {
 						$line []  = show_content($content->$column);
 
 				}
-
+				$language = 'en';
+				$language = __('en', 'export-the-db-to-file');
 			if($language ==='ja'){
 			// Excelで文字化けしないように文字コード変換
 			mb_convert_variables ( 'SJIS', 'UTF-8', $index_name );
@@ -370,7 +371,7 @@ function db_search() {
 				$i ++;
 			}
 			echo '</div>';
-			echo '<h4>Select File type</h4>';
+			echo '<h4>'.$type_select.'</h4>';
 			echo '<input type = "radio" name = "separate" value="csv" checked >'.$csv_radio;
 			echo '<input type = "radio" name = "separate" value="tsv" >'.$tsv_radio;
 			echo '<input type="hidden" name = "count" value=' . $i . '>';
