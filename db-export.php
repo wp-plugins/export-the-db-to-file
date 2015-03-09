@@ -238,7 +238,7 @@ function db_search() {
 			$language = 'en';
 			if($language ==='ja'){
 			// Excelで文字化けしないように文字コード変換
-			mb_convert_variables ( 'SJIS', 'UTF-8', $index_name );
+			mb_convert_variables ( 'SJIS', 'UTF-8', $line );
 			}
 			// 項目名を書き込み
 			fputcsv ( $fp, $index_name ,$sepa);
