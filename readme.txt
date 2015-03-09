@@ -2,8 +2,8 @@
 Contributors: Harigae
 Donate link: http://plugins.svn.wordpress.org/
 Tags: DB,database,export,output,csv,tsv,mysql
-Requires at least: 1.0
-Tested up to: 1.0
+Requires at least: 1.1
+Tested up to: 1.1
 Stable tag: 1.0
 License: GPLv2 or later
 
@@ -28,9 +28,8 @@ After in accordance with the flow ...
 
  == Upgrade Notice ==
 
-None at the moment
-
-今のところないです
+1.1 English , Japanese correspondence
+   英語・日本語対応
 
 == Frequently Asked Questions ==
 

@@ -1,19 +1,54 @@
 <?php
 /**
  * @package  Export the DB to file
- * @version 1.0
+ * @version 1.1
  */
 /*
  * Plugin Name: Export the DB to file
- * Plugin URI: https://wordpress.org/plugins/
+ * Plugin URI: https://wordpress.org/plugins/export-the-db-to-file
  * Description: Plug-in to export the DB tables in WordPress Admin screen as csv file or tsv file
  * WordPress管理画面でDBのテーブルをcsvファイルもしくはtsvファイルとしてエクスポートするプラグイン
  * Author: Harigae
- * Version: 1.0
+ * Version: 1.1
  * Author URI:
 */
+
+load_plugin_textdomain
+( 'export-the-db-to-file', false, basename( dirname( __FILE__ ) ) . '/languages' );
+
+
+
+
+$db_export = 'DB Export';
+$table_selected = 'Selected Table';
+$column_select = 'Column select';
+$table_select = 'Table select';
+$table_selected = 'Selected Table';
+$download_button = 'download';
+$select_button = 'select';
+$csv_radio = 'csv file';
+$tsv_radio = 'tsv file';
+$type_select ='Select File type';
+$attention_moment = 'Please select the column';
+
+
+$db_export = __('DB Export', 'export-the-db-to-file');
+$table_selected = __('Selected Table', 'export-the-db-to-file');
+$column_select = __('Column select', 'export-the-db-to-file');
+$table_select = __('Table select', 'export-the-db-to-file');
+$table_selected = __('Selected Table', 'export-the-db-to-file');
+$download_button = __('download', 'export-the-db-to-file');
+$select_button = __('select', 'export-the-db-to-file');
+$csv_radio = __('csv file', 'export-the-db-to-file');
+$tsv_radio = __('tsv file', 'export-the-db-to-file');
+$attention_moment = __('Please select the column', 'export-the-db-to-file');
+$type_select = __('Select File type', 'export-the-db-to-file');
+
+
 function add_pages() {
-	add_menu_page ( 'DB Export', 'DB 出力', 'level_8', __FILE__, 'db_search', 'dashicons-upload', 26 );
+	$db_export = 'DB Export';
+	$db_export = __('DB Export', 'export-the-db-to-file');
+	add_menu_page ( 'DB Export', $db_export, 'level_8', __FILE__, 'db_search', 'dashicons-upload', 26 );
 }
 
 add_action ( 'admin_menu', 'add_pages' );
@@ -21,13 +56,87 @@ add_action ( 'admin_menu', 'add_pages' );
 
 // プラグインの表示
 function db_search() {
+	$db_export = 'DB Export';
+	$table_selected = 'Selected Table';
+	$column_select = 'Column select';
+	$table_select = 'Table select';
+	$table_selected = 'Selected Table';
+	$download_button = 'download';
+	$select_button = 'select';
+	$csv_radio = 'csv file';
+	$tsv_radio = 'tsv file';
+	$type_select ='Select File type';
+	$attention_moment = 'Please select the column';
+
+
+	$db_export = __('DB Export', 'export-the-db-to-file');
+	$table_selected = __('Selected Table', 'export-the-db-to-file');
+	$column_select = __('Column select', 'export-the-db-to-file');
+	$table_select = __('Table select', 'export-the-db-to-file');
+	$table_selected = __('Selected Table', 'export-the-db-to-file');
+	$download_button = __('download', 'export-the-db-to-file');
+	$select_button = __('select', 'export-the-db-to-file');
+	$csv_radio = __('csv file', 'export-the-db-to-file');
+	$tsv_radio = __('tsv file', 'export-the-db-to-file');
+	$attention_moment = __('Please select the column', 'export-the-db-to-file');
+	$type_select = __('Select File type', 'export-the-db-to-file');
 	if (isset ( $_POST ["example"] ) && ! isset ( $_POST ["column_check"] ) && !isset($_POST["count"])) {
+
+		$db_export = 'DB Export';
+		$table_selected = 'Selected Table';
+		$column_select = 'Column select';
+		$table_select = 'Table select';
+		$table_selected = 'Selected Table';
+		$download_button = 'download';
+		$select_button = 'select';
+		$csv_radio = 'csv file';
+		$tsv_radio = 'tsv file';
+		$type_select ='Select File type';
+		$attention_moment = 'Please select the column';
+
+
+		$db_export = __('DB Export', 'export-the-db-to-file');
+		$table_selected = __('Selected Table', 'export-the-db-to-file');
+		$column_select = __('Column select', 'export-the-db-to-file');
+		$table_select = __('Table select', 'export-the-db-to-file');
+		$table_selected = __('Selected Table', 'export-the-db-to-file');
+		$download_button = __('download', 'export-the-db-to-file');
+		$select_button = __('select', 'export-the-db-to-file');
+		$csv_radio = __('csv file', 'export-the-db-to-file');
+		$tsv_radio = __('tsv file', 'export-the-db-to-file');
+		$attention_moment = __('Please select the column', 'export-the-db-to-file');
+		$type_select = __('Select File type', 'export-the-db-to-file');
 
 		add_action ( 'wp_loaded', 'select_db_table', 1 );
 		// add_action('admin_init', 'select_db_table');
 		add_action ( 'admin_init', 'test' );
 		function select_db_table() {
 			global $wpdb;
+
+			$db_export = 'DB Export';
+			$table_selected = 'Selected Table';
+			$column_select = 'Column select';
+			$table_select = 'Table select';
+			$table_selected = 'Selected Table';
+			$download_button = 'download';
+			$select_button = 'select';
+			$csv_radio = 'csv file';
+			$tsv_radio = 'tsv file';
+			$type_select ='Select File type';
+			$attention_moment = 'Please select the column';
+
+
+			$db_export = __('DB Export', 'export-the-db-to-file');
+			$table_selected = __('Selected Table', 'export-the-db-to-file');
+			$column_select = __('Column select', 'export-the-db-to-file');
+			$table_select = __('Table select', 'export-the-db-to-file');
+			$table_selected = __('Selected Table', 'export-the-db-to-file');
+			$download_button = __('download', 'export-the-db-to-file');
+			$select_button = __('select', 'export-the-db-to-file');
+			$csv_radio = __('csv file', 'export-the-db-to-file');
+			$tsv_radio = __('tsv file', 'export-the-db-to-file');
+			$attention_moment = __('Please select the column', 'export-the-db-to-file');
+			$type_select = __('Select File type', 'export-the-db-to-file');
 
 			$table_name = $wpdb->$_POST ["example"];
 
@@ -42,8 +151,8 @@ function db_search() {
 
 			$i = 0;
 			$column_check = array ();
-			echo '<h4>選択テーブル : ' . $_POST ["example"] . '</h4>';
-			echo '<h4>カラム選択</h4>';
+			echo '<h4>'.$table_selected.' : ' . $_POST ["example"] . '</h4>';
+			echo '<h4>Column select</h4>';
 			echo '<form method = "POST" action = "">';
 			echo '<div>';
 			foreach ( $table_col as $col ) {
@@ -51,12 +160,12 @@ function db_search() {
 				$i ++;
 			}
 			echo '</div>';
-			echo '<h4>ファイル形式</h4>';
-			echo '<input type = "radio" name = "separate" value="csv" checked >csvファイル';
-			echo '<input type = "radio" name = "separate" value="tsv" >tsvファイル';
+			echo '<h4>Select File type</h4>';
+			echo '<input type = "radio" name = "separate" value="csv" checked >'.$csv_radio;
+			echo '<input type = "radio" name = "separate" value="tsv" >'.$tsv_radio;
 			echo '<input type="hidden" name = "count" value=' . $i . '>';
 			echo '<input type="hidden" name = "example" value=' . $_POST ["example"] . '><br>';
-			echo '<br><input type = "submit" value = "ダウンロード" /><hr size = "2px" style="color: black;">';
+			echo '<br><input type = "submit" value = "'.$download_button.'" /><hr size = "2px" style="color: black;">';
 			echo '</form>';
 		}
 
@@ -65,8 +174,36 @@ function db_search() {
 
 	if (isset ( $_POST ["column_check"] )) {
 		function show_table() {
+
 			global $wpdb;
 
+
+			$db_export = 'DB Export';
+			$table_selected = 'Selected Table';
+			$column_select = 'Column select';
+			$table_select = 'Table select';
+			$table_selected = 'Selected Table';
+			$download_button = 'download';
+			$select_button = 'select';
+			$csv_radio = 'csv file';
+			$tsv_radio = 'tsv file';
+			$type_select ='Select File type';
+			$attention_moment = 'Please select the column';
+			$language = 'en';
+
+
+			$db_export = __('DB Export', 'export-the-db-to-file');
+			$table_selected = __('Selected Table', 'export-the-db-to-file');
+			$column_select = __('Column select', 'export-the-db-to-file');
+			$table_select = __('Table select', 'export-the-db-to-file');
+			$table_selected = __('Selected Table', 'export-the-db-to-file');
+			$download_button = __('download', 'export-the-db-to-file');
+			$select_button = __('select', 'export-the-db-to-file');
+			$csv_radio = __('csv file', 'export-the-db-to-file');
+			$tsv_radio = __('tsv file', 'export-the-db-to-file');
+			$attention_moment = __('Please select the column', 'export-the-db-to-file');
+			$type_select = __('Select File type', 'export-the-db-to-file');
+			$language = __('en', 'export-the-db-to-file');
 
 			if(isset($_POST["separate"])){
 				$sepa_name = $_POST["separate"];
@@ -97,9 +234,12 @@ function db_search() {
 
 			$index_name = $_POST["column_check"];
 
+
+			$language = 'en';
+			if($language ==='ja'){
 			// Excelで文字化けしないように文字コード変換
 			mb_convert_variables ( 'SJIS', 'UTF-8', $index_name );
-
+			}
 			// 項目名を書き込み
 			fputcsv ( $fp, $index_name ,$sepa);
 			$line = array();
@@ -149,8 +289,10 @@ function db_search() {
 
 				}
 
-				// Excelで開けるように文字コード変換
-				mb_convert_variables ( 'SJIS', 'UTF-8', $line );
+			if($language ==='ja'){
+			// Excelで文字化けしないように文字コード変換
+			mb_convert_variables ( 'SJIS', 'UTF-8', $index_name );
+			}
 
 				// このループ文書き込み
 				fputcsv ( $fp, $line ,$sepa);
@@ -173,10 +315,38 @@ function db_search() {
 	}elseif (isset($_POST["count"])){
 
 
-	echo '<h4  style="color: red;">カラムを選択してください</h4>';
+	echo '<h4  style="color: red;">'.$attention_moment.'</h4>';
 
  		function select_db_table2() {
 			global $wpdb;
+
+
+			$db_export = 'DB Export';
+			$table_selected = 'Selected Table';
+			$column_select = 'Column select';
+			$table_select = 'Table select';
+			$table_selected = 'Selected Table';
+			$download_button = 'download';
+			$select_button = 'select';
+			$csv_radio = 'csv file';
+			$tsv_radio = 'tsv file';
+			$type_select ='Select File type';
+			$attention_moment = 'Please select the column';
+			$language = 'en';
+
+
+			$db_export = __('DB Export', 'export-the-db-to-file');
+			$table_selected = __('Selected Table', 'export-the-db-to-file');
+			$column_select = __('Column select', 'export-the-db-to-file');
+			$table_select = __('Table select', 'export-the-db-to-file');
+			$table_selected = __('Selected Table', 'export-the-db-to-file');
+			$download_button = __('download', 'export-the-db-to-file');
+			$select_button = __('select', 'export-the-db-to-file');
+			$csv_radio = __('csv file', 'export-the-db-to-file');
+			$tsv_radio = __('tsv file', 'export-the-db-to-file');
+			$attention_moment = __('Please select the column', 'export-the-db-to-file');
+			$type_select = __('Select File type', 'export-the-db-to-file');
+			$language = __('en', 'export-the-db-to-file');
 
 			$table_name = $wpdb->$_POST ["example"];
 
@@ -191,8 +361,8 @@ function db_search() {
 
 			$i = 0;
 			$column_check = array ();
-			echo '<h4>選択テーブル : ' . $_POST ["example"] . '</h4>';
-			echo '<h4>カラム選択</h4>';
+			echo '<h4>'.$table_selected.' : ' . $_POST ["example"] . '</h4>';
+			echo '<h4>'.$column_select.'</h4>';
 			echo '<form method = "POST" action = "">';
 			echo '<div>';
 			foreach ( $table_col as $col ) {
@@ -200,12 +370,12 @@ function db_search() {
 				$i ++;
 			}
 			echo '</div>';
-			echo '<h4>ファイル形式</h4>';
-			echo '<input type = "radio" name = "separate" value="csv" checked >csvファイル';
-			echo '<input type = "radio" name = "separate" value="tsv" >tsvファイル';
+			echo '<h4>Select File type</h4>';
+			echo '<input type = "radio" name = "separate" value="csv" checked >'.$csv_radio;
+			echo '<input type = "radio" name = "separate" value="tsv" >'.$tsv_radio;
 			echo '<input type="hidden" name = "count" value=' . $i . '>';
 			echo '<input type="hidden" name = "example" value=' . $_POST ["example"] . '><br>';
-			echo '<br><input type = "submit" value = "ダウンロード" /><hr size = "2px" style="color: black;">';
+			echo '<br><input type = "submit" value = "'.$download_button.'" /><hr size = "2px" style="color: black;">';
 			echo '</form>';
 		}
 
@@ -213,14 +383,14 @@ function db_search() {
 	}
 
 	global $wpdb;
-	echo '<h4>テーブル選択</h4>';
+	echo '<h4>'.$table_select.'</h4>';
 	echo '<form method = "POST" action = "">';
 	echo '<div><select name="example">';
 	foreach ( $wpdb->tables as $key => $value ) {
 		echo '<option  value="' . $value . '">' . $value . '</option>';
 	}
 	echo '</select></div>';
-	echo '<br><input type = "submit" value = "選択" />';
+	echo '<br><input type = "submit" value = "'.$select_button.'" />';
 	echo '</form>';
 
 	add_action ( 'admin_print_header_scripts', 'select_table', 21 );
