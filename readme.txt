@@ -20,7 +20,7 @@ This section describes how to install the plugin and get it working.
 
 1. Upload `db-export-file` to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3.Click there because is displayed 'DB 出力' in the management screen
+3.Click there because is displayed 'DB Export' in the management screen
 After in accordance with the flow ...
 
 インストールして有効化すれば管理画面上に'DB出力'のメニューができる。
