@@ -48,3 +48,7 @@ None at the moment
 * A change since the previous version.
 * Another change.
 
+= 1.1 =
+* English , Japanese correspondence
+* 英語・日本語対応
+
