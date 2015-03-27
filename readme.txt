@@ -35,7 +35,7 @@ After in accordance with the flow ...
 
 None at the moment
 
-質問あれば随時更新します
+質問あれば随時更新します.
 
 == Screenshots ==
 
